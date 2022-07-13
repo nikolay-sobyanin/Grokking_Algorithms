@@ -12,6 +12,7 @@ def time_track(func):
     return surrogate
 
 
+# O(n)
 @time_track
 def linear_search(list_item, item):
     count_iterations = 0
@@ -23,6 +24,7 @@ def linear_search(list_item, item):
     return None
 
 
+# O(log(n))
 @time_track
 def binary_search(list_item, item):
     low = 0
@@ -45,5 +47,9 @@ def binary_search(list_item, item):
 
 
 my_list = range(1, 10 ** 10)
-binary_search(my_list, 10 ** 9)
-linear_search(my_list, 10 ** 8)
+index_x = binary_search(my_list, 10 ** 8)
+print('Binary search: {}'.format(index_x))
+
+index_y = linear_search(my_list, 10 ** 8)
+print('Linear search: {}'.format(index_y))
+
